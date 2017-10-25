@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- pojo的映射文件  orm -->
+<hibernate-mapping>
+	<class name="com.pojo.UserInfo" table="userinfo"><!-- 表对应类 -->
+		<id name="username" column="username">
+			<generator class="assigned"></generator>
+		</id>
+	
+		<property name="password" column="password"></property>
+	
+		<set name="goods" table="collection"  cascade="all"><!-- 配置的中间表 -->
+			<key column="uname"></key>
+			<many-to-many class="com.pojo.Goods" column="gid"></many-to-many>
+		</set>
+	
+	</class>
+
+
+
+</hibernate-mapping>
+
+
+

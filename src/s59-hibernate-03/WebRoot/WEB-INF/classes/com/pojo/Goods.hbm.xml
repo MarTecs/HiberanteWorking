@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- pojo的映射文件  orm -->
+<hibernate-mapping>
+	<class name="com.pojo.Goods" table="goods"><!-- 表对应类 -->
+		<id name="goodsid" column="goodsid">
+			<generator class="assigned"></generator>
+		</id>
+	
+		<property name="goodsname" column="goodsname"></property>
+	
+		<!-- 反转的意思就是不去维护关系 -->
+		<set name="infos" table="collection" inverse="true">
+			<key column="gid"></key>
+			<many-to-many class="com.pojo.UserInfo" column="uname"></many-to-many>
+		</set>
+	
+	</class>
+
+
+
+</hibernate-mapping>
+
+
+
