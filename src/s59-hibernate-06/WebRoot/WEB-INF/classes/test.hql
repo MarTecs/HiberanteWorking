@@ -1,0 +1,1 @@
+select goodsid , goodsname from Goods
