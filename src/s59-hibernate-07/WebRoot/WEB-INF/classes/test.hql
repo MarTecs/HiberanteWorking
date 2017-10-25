@@ -1,0 +1,1 @@
+select u.username , g.goodsname from Userinfo u , Goods g 
