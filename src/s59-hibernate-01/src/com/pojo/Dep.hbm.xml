@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- 配置的是表和类的关系 -->
+<hibernate-mapping>
+	<class name="com.pojo.Dep" table="dep">
+		<id name="depid" column="depid">
+			<generator class="assigned"></generator>
+		</id><!-- 主键 -->
+		<property name="depname" column="depname"></property>
+		
+	</class>
+
+
+</hibernate-mapping>
+
+
