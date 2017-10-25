@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- 配置的是表和类的关系 -->
+<hibernate-mapping>
+	<class name="com.pojo.Emp" table="emp">
+		<id name="empid" column="empid">
+			<generator class="assigned"></generator>
+		</id>
+		
+		<property name="empname" column="empname"></property>
+		
+		<!--配的是多对一的关系  column="did" 数据库的关系的是由外键体现的   -->
+		<many-to-one name="dep" column="did" class="com.pojo.Dep" cascade="all"></many-to-one>
+		
+		
+		
+	</class>
+
+</hibernate-mapping>
+
+
